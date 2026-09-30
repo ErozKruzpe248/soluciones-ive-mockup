@@ -10,7 +10,3 @@ nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
   menuButton.setAttribute('aria-expanded', 'false');
   menuButton.setAttribute('aria-label', 'Abrir menú');
 }));
-document.querySelector('#contact-form').addEventListener('submit', event => {
-  event.preventDefault();
-  document.querySelector('#form-feedback').hidden = false;
-});
