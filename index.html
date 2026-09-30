@@ -7,7 +7,7 @@
   <meta name="description" content="Soluciones IVE en Monterrey: fabricación metálica, señalización y pintura electrostática para proyectos a medida.">
   <title>Soluciones IVE — Fabricación, señalización y acabados en Monterrey</title>
   <link rel="icon" type="image/png" href="assets/logo-ive.png">
-  <link rel="stylesheet" href="styles.css?v=avance-2">
+  <link rel="stylesheet" href="styles.css?v=galeria-1">
 </head>
 <body>
   <div class="preview-notice">Vista previa para revisión <span>·</span> Soluciones IVE</div>
@@ -111,11 +111,27 @@
 
     <section class="section projects" id="proyectos">
       <div class="shell">
-        <div class="section-head projects-head"><div><p class="kicker">UNA MIRADA AL TRABAJO <span>03</span></p><h2>Hecho para<br><em>verse y funcionar.</em></h2></div><p class="section-lead">Una selección inicial de imágenes del archivo del proyecto. La publicación final de cada trabajo requiere validación.</p></div>
-        <div class="project-grid">
-          <figure class="project-card project-large"><img src="assets/proteccion-acrilico.jpg" alt="División de acrílico transparente instalada sobre una mesa" loading="lazy"><figcaption><span>01 / Acrílicos</span><strong>Soluciones funcionales</strong></figcaption></figure>
-          <figure class="project-card"><img src="assets/modulo-azul.jpg" alt="Módulo metálico azul en proceso de fabricación" loading="lazy"><figcaption><span>02 / Estructuras</span><strong>Soluciones a medida</strong></figcaption></figure>
-          <figure class="project-card"><img src="assets/anuncio-luminoso.jpg" alt="Anuncio luminoso encendido" loading="lazy"><figcaption><span>03 / Anuncios</span><strong>Presencia visual</strong></figcaption></figure>
+        <div class="section-head projects-head"><div><p class="kicker">GALERÍA DE TRABAJOS <span>03</span></p><h2>Hecho para<br><em>verse y funcionar.</em></h2></div><p class="section-lead">Explora una selección del archivo fotográfico. Toca una imagen para verla completa. Las categorías describen las fotos y siguen sujetas a revisión.</p></div>
+        <div class="gallery-filters" role="group" aria-label="Filtrar fotografías por categoría">
+          <button class="gallery-filter is-active" type="button" data-filter="todos" aria-pressed="true">Todos <span>10</span></button>
+          <button class="gallery-filter" type="button" data-filter="acrilicos" aria-pressed="false">Acrílicos</button>
+          <button class="gallery-filter" type="button" data-filter="estructuras" aria-pressed="false">Estructuras</button>
+          <button class="gallery-filter" type="button" data-filter="anuncios" aria-pressed="false">Anuncios</button>
+          <button class="gallery-filter" type="button" data-filter="pizarrones" aria-pressed="false">Pizarrones</button>
+          <button class="gallery-filter" type="button" data-filter="rotulacion" aria-pressed="false">Rotulación</button>
+          <button class="gallery-filter" type="button" data-filter="senalizacion" aria-pressed="false">Señalización</button>
+        </div>
+        <div class="project-grid" id="project-grid">
+          <figure class="project-card project-large" data-category="acrilicos"><img src="assets/proteccion-acrilico.jpg" alt="División de acrílico transparente instalada sobre una mesa" loading="lazy"><figcaption><span>Acrílicos</span><strong>Protección transparente</strong></figcaption><button class="project-open" type="button" aria-label="Ampliar foto: Protección transparente"><span aria-hidden="true">↗</span></button></figure>
+          <figure class="project-card" data-category="estructuras"><img src="assets/modulo-azul.jpg" alt="Módulo metálico azul en proceso de fabricación" loading="lazy"><figcaption><span>Estructuras</span><strong>Módulo metálico</strong></figcaption><button class="project-open" type="button" aria-label="Ampliar foto: Módulo metálico"><span aria-hidden="true">↗</span></button></figure>
+          <figure class="project-card" data-category="anuncios"><img src="assets/anuncio-luminoso.jpg" alt="Anuncio luminoso con la palabra Estético" loading="lazy"><figcaption><span>Anuncios</span><strong>Letras iluminadas</strong></figcaption><button class="project-open" type="button" aria-label="Ampliar foto: Letras iluminadas"><span aria-hidden="true">↗</span></button></figure>
+          <figure class="project-card" data-category="acrilicos"><img src="assets/galeria-acrilicos-porta-documentos.jpg" alt="Portadocumentos transparentes fabricados en acrílico" loading="lazy"><figcaption><span>Acrílicos</span><strong>Portadocumentos</strong></figcaption><button class="project-open" type="button" aria-label="Ampliar foto: Portadocumentos"><span aria-hidden="true">↗</span></button></figure>
+          <figure class="project-card" data-category="estructuras"><img src="assets/galeria-estructura-malla.jpg" alt="Estructura metálica blanca con puertas de malla" loading="lazy"><figcaption><span>Estructuras</span><strong>Estructura de malla</strong></figcaption><button class="project-open" type="button" aria-label="Ampliar foto: Estructura de malla"><span aria-hidden="true">↗</span></button></figure>
+          <figure class="project-card" data-category="pizarrones"><img src="assets/galeria-pizarron-procesos.jpg" alt="Pizarrón móvil para procedimientos y registros de proceso" loading="lazy"><figcaption><span>Pizarrones</span><strong>Tablero de procesos</strong></figcaption><button class="project-open" type="button" aria-label="Ampliar foto: Tablero de procesos"><span aria-hidden="true">↗</span></button></figure>
+          <figure class="project-card" data-category="rotulacion"><img src="assets/galeria-rotulacion-puerta.jpg" alt="Puerta negra con pictograma blanco aplicado" loading="lazy"><figcaption><span>Rotulación</span><strong>Gráfico en puerta</strong></figcaption><button class="project-open" type="button" aria-label="Ampliar foto: Gráfico en puerta"><span aria-hidden="true">↗</span></button></figure>
+          <figure class="project-card" data-category="rotulacion"><img src="assets/galeria-rotulacion-vidrio.jpg" alt="Cristal de acceso con franjas y letras de vinil" loading="lazy"><figcaption><span>Rotulación</span><strong>Vinil en cristal</strong></figcaption><button class="project-open" type="button" aria-label="Ampliar foto: Vinil en cristal"><span aria-hidden="true">↗</span></button></figure>
+          <figure class="project-card" data-category="senalizacion"><img src="assets/galeria-senal-velocidad.jpg" alt="Señal de velocidad máxima de diez kilómetros por hora" loading="lazy"><figcaption><span>Señalización</span><strong>Señal de velocidad</strong></figcaption><button class="project-open" type="button" aria-label="Ampliar foto: Señal de velocidad"><span aria-hidden="true">↗</span></button></figure>
+          <figure class="project-card" data-category="senalizacion"><img src="assets/galeria-senal-direcciones.jpg" alt="Señal amarilla con flechas de dirección" loading="lazy"><figcaption><span>Señalización</span><strong>Señal direccional</strong></figcaption><button class="project-open" type="button" aria-label="Ampliar foto: Señal direccional"><span aria-hidden="true">↗</span></button></figure>
         </div>
       </div>
     </section>
@@ -132,8 +148,18 @@
     </section>
   </main>
 
+  <dialog class="gallery-lightbox" id="gallery-lightbox" aria-label="Fotografía ampliada">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" type="button" aria-label="Cerrar fotografía">×</button>
+      <button class="lightbox-arrow lightbox-prev" type="button" aria-label="Fotografía anterior">‹</button>
+      <img class="lightbox-image" src="" alt="">
+      <button class="lightbox-arrow lightbox-next" type="button" aria-label="Fotografía siguiente">›</button>
+      <div class="lightbox-caption"><span class="lightbox-title"></span><span class="lightbox-count"></span></div>
+    </div>
+  </dialog>
+
   <footer class="site-footer"><div class="shell footer-inner"><img class="footer-logo" src="assets/logo-ive.png" alt="Soluciones Visuales IVE" width="96" height="62" style="display:block;width:96px;height:62px;object-fit:contain;background:#fff;padding:4px"><a href="mailto:Solucionesvisuales@ive.mx">Solucionesvisuales@ive.mx</a><a href="#inicio">Volver arriba ↑</a></div></footer>
   <a class="floating-contact" href="https://wa.me/5218119651353" target="_blank" rel="noopener noreferrer" aria-label="Escribir a Soluciones IVE por WhatsApp">WhatsApp <span aria-hidden="true">↗</span></a>
-  <script src="script.js"></script>
+  <script src="script.js?v=galeria-1"></script>
 </body>
 </html>
