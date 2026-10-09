@@ -10,9 +10,18 @@ nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
   menuButton.setAttribute('aria-expanded', 'false');
   menuButton.setAttribute('aria-label', 'Abrir menú');
 }));
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Escape' || !nav.classList.contains('open')) return;
+  nav.classList.remove('open');
+  menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.setAttribute('aria-label', 'Abrir menú');
+  menuButton.focus();
+});
 
 const filters = [...document.querySelectorAll('.gallery-filter')];
 const cards = [...document.querySelectorAll('.project-card')];
+const galleryStatus = document.querySelector('.gallery-status');
+document.querySelector('.gallery-filter[data-filter="todos"] span').textContent = String(cards.length);
 const lightbox = document.querySelector('#gallery-lightbox');
 const lightboxImage = lightbox.querySelector('.lightbox-image');
 const lightboxTitle = lightbox.querySelector('.lightbox-title');
@@ -30,6 +39,7 @@ filters.forEach(filter => filter.addEventListener('click', () => {
   });
   cards.forEach(card => { card.hidden = category !== 'todos' && card.dataset.category !== category; });
   visibleCards = cards.filter(card => !card.hidden);
+  galleryStatus.textContent = `${visibleCards.length} ${visibleCards.length === 1 ? 'fotografía visible' : 'fotografías visibles'}.`;
 }));
 
 function showPhoto(index) {
