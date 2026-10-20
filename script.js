@@ -130,3 +130,69 @@ lightboxImage.addEventListener('touchend', event => {
   const distance = event.changedTouches[0].screenX - touchStartX;
   if (Math.abs(distance) > 55) showPhoto(currentIndex + (distance < 0 ? 1 : -1));
 }, { passive: true });
+
+const heroCarousel = document.querySelector('.hero-carousel');
+if (heroCarousel) {
+  const slides = [...heroCarousel.querySelectorAll('.hero-slide')];
+  const captions = ['Fabricación metálica', 'Señalización visual', 'Rotulación de espacios'];
+  const caption = heroCarousel.querySelector('#hero-slide-caption');
+  const counter = heroCarousel.querySelector('.hero-carousel-count');
+  const pauseButton = heroCarousel.querySelector('.hero-carousel-pause');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let activeSlide = 0;
+  let paused = prefersReducedMotion.matches;
+  let changing = false;
+
+  async function showHeroSlide(index) {
+    if (changing || index === activeSlide) return;
+    changing = true;
+    const nextIndex = (index + slides.length) % slides.length;
+    const next = slides[nextIndex];
+    if (next.dataset.src) {
+      next.src = next.dataset.src;
+      delete next.dataset.src;
+    }
+    try {
+      await next.decode();
+      slides[activeSlide].classList.remove('is-active');
+      slides[activeSlide].setAttribute('aria-hidden', 'true');
+      next.classList.add('is-active');
+      next.removeAttribute('aria-hidden');
+      activeSlide = nextIndex;
+      caption.textContent = captions[activeSlide];
+      counter.textContent = `${String(activeSlide + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+      heroCarousel.querySelector('.hero-corner').textContent = `IVE / ${String(activeSlide + 1).padStart(2, '0')}`;
+    } catch (error) {
+      // Conservar la foto anterior si falla una descarga.
+    } finally {
+      changing = false;
+    }
+  }
+
+  heroCarousel.querySelector('.hero-carousel-prev').addEventListener('click', () => showHeroSlide(activeSlide - 1));
+  heroCarousel.querySelector('.hero-carousel-next').addEventListener('click', () => showHeroSlide(activeSlide + 1));
+  pauseButton.addEventListener('click', () => {
+    paused = !paused;
+    pauseButton.setAttribute('aria-pressed', String(paused));
+    pauseButton.setAttribute('aria-label', paused ? 'Reanudar carrusel' : 'Pausar carrusel');
+    pauseButton.textContent = paused ? '▶' : 'Ⅱ';
+  });
+  prefersReducedMotion.addEventListener('change', event => {
+    paused = event.matches;
+    pauseButton.setAttribute('aria-pressed', String(paused));
+    pauseButton.setAttribute('aria-label', paused ? 'Reanudar carrusel' : 'Pausar carrusel');
+    pauseButton.textContent = paused ? '▶' : 'Ⅱ';
+  });
+  if (paused) {
+    pauseButton.setAttribute('aria-pressed', 'true');
+    pauseButton.setAttribute('aria-label', 'Reanudar carrusel');
+    pauseButton.textContent = '▶';
+  }
+  heroCarousel.classList.add('is-ready');
+  window.setInterval(() => {
+    if (!paused && !prefersReducedMotion.matches && !document.hidden &&
+        !heroCarousel.matches(':hover') && !heroCarousel.contains(document.activeElement)) {
+      showHeroSlide(activeSlide + 1);
+    }
+  }, 7000);
+}

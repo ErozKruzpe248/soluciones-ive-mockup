@@ -7,7 +7,7 @@
   <meta name="description" content="Soluciones IVE en Monterrey: fabricación metálica, señalización y pintura electrostática para proyectos a medida.">
   <title>Soluciones IVE — Fabricación, señalización y acabados en Monterrey</title>
   <link rel="icon" type="image/png" href="assets/logo-ive.png">
-  <link rel="stylesheet" href="styles.css?v=fase1-qa-1">
+  <link rel="stylesheet" href="styles.css?v=carrusel-prueba-1">
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -42,9 +42,17 @@
           </div>
           <div class="hero-bottom"><span>01 / 02</span><span>Dos líneas. Una visión.</span></div>
         </div>
-        <div class="hero-visual">
-          <img src="assets/modulo-azul.jpg" alt="Módulo metálico azul fotografiado en taller" fetchpriority="high" width="341" height="607">
-          <div class="hero-visual-label"><span>Fabricación<br>metálica</span><span class="label-plus">+</span><span>Señalización<br>visual</span></div>
+        <div class="hero-visual hero-carousel" aria-label="Trabajos de Soluciones IVE">
+          <img class="hero-slide is-active" src="assets/modulo-azul.jpg" alt="Módulo metálico azul fotografiado en taller" fetchpriority="high" width="341" height="607">
+          <img class="hero-slide" data-src="assets/galeria-senal-direcciones.jpg" alt="Señal amarilla de direcciones fabricada para orientar el tránsito" aria-hidden="true" width="1200" height="1600">
+          <img class="hero-slide" data-src="assets/galeria-rotulacion-puerta.jpg" alt="Puerta con figura blanca aplicada sobre superficie negra" aria-hidden="true" width="780" height="1040">
+          <div class="hero-visual-label" id="hero-slide-caption">Fabricación metálica</div>
+          <div class="hero-carousel-controls" aria-label="Controles del carrusel">
+            <button class="hero-carousel-prev" type="button" aria-label="Imagen anterior">←</button>
+            <span class="hero-carousel-count" aria-live="off">01 / 03</span>
+            <button class="hero-carousel-next" type="button" aria-label="Imagen siguiente">→</button>
+            <button class="hero-carousel-pause" type="button" aria-label="Pausar carrusel" aria-pressed="false">Ⅱ</button>
+          </div>
           <div class="hero-corner" aria-hidden="true">IVE / 01</div>
         </div>
       </div>
@@ -161,6 +169,6 @@
 
   <footer class="site-footer"><div class="shell footer-inner"><img class="footer-logo" src="assets/logo-ive.png" alt="Soluciones Visuales IVE" width="96" height="62"><a href="mailto:Solucionesvisuales@ive.mx">Solucionesvisuales@ive.mx</a><a href="#inicio">Volver arriba ↑</a></div></footer>
   <a class="floating-contact" href="https://wa.me/5218119651353" target="_blank" rel="noopener noreferrer" aria-label="Escribir a Soluciones IVE por WhatsApp">WhatsApp <span aria-hidden="true">↗</span></a>
-  <script src="script.js?v=albumes-1"></script>
+  <script src="script.js?v=carrusel-prueba-1"></script>
 </body>
 </html>

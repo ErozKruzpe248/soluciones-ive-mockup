@@ -50,3 +50,17 @@ a:focus-visible,button:focus-visible,.gallery-lightbox button:focus-visible{outl
 @media(max-width:760px){.main-nav>a:not(.nav-cta)::after{display:none}.main-nav>a:not(.nav-cta):hover,.main-nav>a:not(.nav-cta):focus-visible{color:var(--blue);background:#eef1f1}.solution-card:hover{transform:none}}
 @media(min-width:1151px){.finish-grid{grid-template-columns:minmax(0,48fr) minmax(0,52fr)}}
 
+/* Carrusel ligero: el primer trabajo permanece visible aun sin JavaScript. */
+.hero-carousel .hero-slide{opacity:0;transition:opacity .55s ease;object-position:center 50%}
+.hero-carousel .hero-slide.is-active{opacity:1}
+.hero-carousel::after{z-index:1}
+.hero-carousel .hero-visual-label{z-index:2;bottom:29px;right:205px;min-height:22px}
+.hero-carousel .hero-corner{z-index:2}
+.hero-carousel-controls{display:none;position:absolute;right:23px;bottom:19px;z-index:2;align-items:center;gap:5px;color:#fff}
+.hero-carousel.is-ready .hero-carousel-controls{display:flex}
+.hero-carousel-controls button{width:35px;height:35px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.8);background:rgba(17,27,38,.68);color:#fff;cursor:pointer;line-height:1;font-size:18px}
+.hero-carousel-controls button:hover{background:#fff;color:var(--ink)}
+.hero-carousel-count{min-width:48px;text-align:center;font-size:11px;font-weight:800;letter-spacing:.08em;text-shadow:0 1px 4px #111b26}
+.hero-carousel-pause{font-size:14px!important}
+@media(max-width:520px){.hero-carousel .hero-visual-label{left:18px;right:170px;bottom:26px;font-size:11px}.hero-carousel-controls{right:12px;bottom:17px;gap:3px}.hero-carousel-controls button{width:30px;height:30px}.hero-carousel-count{min-width:40px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.hero-carousel .hero-slide{transition:none}}
