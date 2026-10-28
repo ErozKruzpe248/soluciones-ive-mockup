@@ -28,45 +28,45 @@ const lightboxTitle = lightbox.querySelector('.lightbox-title');
 const lightboxCount = lightbox.querySelector('.lightbox-count');
 // Cada tarjeta conserva su portada; las otras fotos se solicitan sólo al abrir su álbum.
 const albumExtras = {
-  'acrilicos-proteccion': [
-    { src: 'assets/album-acrilicos-buzon.webp', alt: 'Buzón transparente de ideas y sugerencias fabricado en acrílico', title: 'Buzón de acrílico' },
-    { src: 'assets/album-acrilicos-seguridad.webp', alt: 'Tablero transparente de seguridad y calidad', title: 'Tablero de seguridad' }
+  'rotulacion-muros': [
+    { src: 'assets/nueva-f09.jpg', alt: 'Gráficos informativos de colores instalados sobre un muro industrial', title: 'Gráficos informativos' },
+    { src: 'assets/nueva-f25.jpg', alt: 'Mural histórico con fotografías y texto en blanco y negro', title: 'Mural histórico' }
   ],
-  'acrilicos-documentos': [
-    { src: 'assets/album-acrilicos-tableros.webp', alt: 'Documentos organizados en paneles transparentes', title: 'Paneles para documentos' },
-    { src: 'assets/album-acrilicos-cultura.webp', alt: 'Gráfico de cultura operacional montado en acrílico', title: 'Gráfico informativo' }
+  'estructuras-exhibidor': [
+    { src: 'assets/nueva-f07.jpg', alt: 'Estructura metálica verde en taller', title: 'Estructura metálica' },
+    { src: 'assets/nueva-f16.jpg', alt: 'Estación de trabajo con estructura metálica blanca', title: 'Estación de trabajo' }
   ],
-  'estructuras-modulo': [
-    { src: 'assets/album-estructuras-estanteria.webp', alt: 'Estantería metálica azul en un espacio de trabajo', title: 'Estantería metálica' },
-    { src: 'assets/album-estructuras-contenedor.webp', alt: 'Contenedor metálico azul fabricado en taller', title: 'Contenedor metálico' }
+  'anuncios-exterior': [
+    { src: 'assets/nueva-f04.jpg', alt: 'Letrero de bienvenida instalado en una fachada', title: 'Letrero de bienvenida' },
+    { src: 'assets/nueva-f38.jpg', alt: 'Letras de marca en relieve sobre un panel', title: 'Letras en relieve' }
   ],
-  'estructuras-malla': [
-    { src: 'assets/album-estructuras-gabinete-abierto.webp', alt: 'Gabinete metálico de malla con puertas abiertas', title: 'Gabinete de malla' },
-    { src: 'assets/album-estructuras-gabinete.webp', alt: 'Gabinete metálico blanco con paneles de malla', title: 'Estructura de gabinete' }
+  'exhibidores-producto': [
+    { src: 'assets/nueva-f27.jpg', alt: 'Exhibidores de prendas deportivas sobre bases negras', title: 'Exhibidores de prendas' },
+    { src: 'assets/nueva-f41.jpg', alt: 'Pieza promocional montada sobre una mesa de exhibición', title: 'Pieza de exhibición' }
   ],
-  'anuncios-letras': [
-    { src: 'assets/album-anuncios-dental.webp', alt: 'Letras luminosas azules para un negocio dental', title: 'Letras luminosas azules' },
-    { src: 'assets/album-anuncios-lemon.webp', alt: 'Letras y logotipo iluminados en un acceso comercial', title: 'Anuncio iluminado' }
+  'estructuras-gabinetes': [
+    { src: 'assets/nueva-f24.jpg', alt: 'Conjunto de gabinetes metálicos grises con puertas transparentes', title: 'Gabinetes con puertas' },
+    { src: 'assets/nueva-f33.jpg', alt: 'Estructura metálica negra de malla en taller', title: 'Estructura de malla' }
   ],
   'pizarrones-procesos': [
-    { src: 'assets/album-pizarrones-seguimiento.webp', alt: 'Tablero de seguimiento de procesos sobre estructura móvil', title: 'Tablero de seguimiento' },
-    { src: 'assets/album-pizarrones-registros.webp', alt: 'Pizarrón de registros con recuadros para información de procesos', title: 'Pizarrón de registros' }
+    { src: 'assets/nueva-f15.jpg', alt: 'Tablero triple con áreas de seguridad, calidad y productividad', title: 'Tablero de áreas' },
+    { src: 'assets/nueva-f34.jpg', alt: 'Tablero informativo sobre estructura metálica móvil', title: 'Tablero móvil' }
   ],
-  'rotulacion-puerta': [
-    { src: 'assets/album-rotulacion-logotipo.webp', alt: 'Logotipo aplicado sobre un muro interior', title: 'Logotipo en muro' },
-    { src: 'assets/album-rotulacion-mural.webp', alt: 'Gráfico de colores aplicado en un muro interior', title: 'Gráfico en muro' }
+  'rotulacion-espacios': [
+    { src: 'assets/nueva-f35.jpg', alt: 'Gráfica de servicio al cliente aplicada sobre ventanales', title: 'Gráfica en vidrio' },
+    { src: 'assets/nueva-f36.jpg', alt: 'Gráfica circular informativa aplicada sobre un muro', title: 'Gráfica en muro' }
   ],
-  'rotulacion-vidrio': [
-    { src: 'assets/album-rotulacion-franjas.webp', alt: 'Franjas de vinil colocadas en una mampara de vidrio', title: 'Franjas en vidrio' },
-    { src: 'assets/album-rotulacion-esmerilado.webp', alt: 'Puerta de vidrio con aplicación de vinil esmerilado', title: 'Vinil esmerilado' }
+  'pizarrones-seguimiento': [
+    { src: 'assets/nueva-f39.jpg', alt: 'Tablero móvil de cambios y seguimiento con estructura gris', title: 'Tablero de cambios' },
+    { src: 'assets/nueva-f44.jpg', alt: 'Tablero informativo iluminado en un muro', title: 'Tablero iluminado' }
   ],
-  'senalizacion-velocidad': [
-    { src: 'assets/album-senalizacion-velocidad-20.jpg', alt: 'Señal de velocidad máxima de veinte kilómetros por hora instalada en exterior', title: 'Señal de velocidad instalada' },
-    { src: 'assets/album-senalizacion-seguridad.webp', alt: 'Señal informativa de seguridad en un taller', title: 'Señal de seguridad' }
+  'senalizacion-seguridad': [
+    { src: 'assets/nueva-f40.jpg', alt: 'Señal naranja de molde de transferencia para área industrial', title: 'Señal industrial' },
+    { src: 'assets/nueva-f43.jpg', alt: 'Panel azul de estación de limpieza con siluetas de herramientas', title: 'Estación de limpieza' }
   ],
-  'senalizacion-direcciones': [
-    { src: 'assets/album-senalizacion-sanitarios.webp', alt: 'Señal azul de sanitarios para mujeres', title: 'Señal de sanitarios' },
-    { src: 'assets/album-senalizacion-directorio.webp', alt: 'Directorio vertical con nombres y flechas de orientación', title: 'Directorio de orientación' }
+  'anuncios-graficos': [
+    { src: 'assets/nueva-f30.jpg', alt: 'Gráfica comercial roja instalada sobre una estructura larga', title: 'Gráfica de gran formato' },
+    { src: 'assets/nueva-f45.jpg', alt: 'Espacio de exhibición comercial con paneles gráficos', title: 'Espacio de exhibición' }
   ]
 };
 let activeAlbum = [];
@@ -134,7 +134,7 @@ lightboxImage.addEventListener('touchend', event => {
 const heroCarousel = document.querySelector('.hero-carousel');
 if (heroCarousel) {
   const slides = [...heroCarousel.querySelectorAll('.hero-slide')];
-  const captions = ['Fabricación metálica', 'Señalización visual', 'Rotulación de espacios'];
+  const captions = ['Señalización exterior', 'Estructuras a medida', 'Fabricación metálica'];
   const caption = heroCarousel.querySelector('#hero-slide-caption');
   const counter = heroCarousel.querySelector('.hero-carousel-count');
   const pauseButton = heroCarousel.querySelector('.hero-carousel-pause');
