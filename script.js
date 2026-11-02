@@ -134,7 +134,7 @@ lightboxImage.addEventListener('touchend', event => {
 const heroCarousel = document.querySelector('.hero-carousel');
 if (heroCarousel) {
   const slides = [...heroCarousel.querySelectorAll('.hero-slide')];
-  const captions = ['Señalización exterior', 'Estructuras a medida', 'Fabricación metálica'];
+  const captions = ['Señalización exterior', 'Estructuras a medida', 'Fabricación de estructuras'];
   const caption = heroCarousel.querySelector('#hero-slide-caption');
   const counter = heroCarousel.querySelector('.hero-carousel-count');
   const pauseButton = heroCarousel.querySelector('.hero-carousel-pause');
@@ -196,3 +196,4 @@ if (heroCarousel) {
     }
   }, 7000);
 }
+
